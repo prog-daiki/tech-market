@@ -8,7 +8,6 @@ import { SafeUser } from "@/app/types";
 
 import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
-// import ListingCategory from "./ListingCategory";
 
 
 interface ListingInfoProps {
@@ -20,7 +19,7 @@ interface ListingInfoProps {
     label: string;
     description: string;
   } | undefined
-  commodityCondition: string;
+  commodityConditionValue: string;
 }
 
 const ListingInfo: React.FC<ListingInfoProps> = ({
@@ -28,11 +27,10 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   description,
   brand,
   category,
-  commodityCondition,
+  commodityConditionValue,
 }) => {
   const { getByValue } = useConditions();
 
-  // const coordinates = getByValue(locationValue)?.latlng
 
   return (
     <div className="col-span-4 flex flex-col gap-8">

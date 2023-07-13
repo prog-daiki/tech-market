@@ -1,8 +1,7 @@
 'use client';
 
 import useConditions from "@/app/hooks/useConditions";
-import { SafeListing, SafeUser } from "@/app/types";
-import { Listing, Purchase } from "@prisma/client";
+import { SafeListing, SafeUser, SafePurchase } from "@/app/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
@@ -11,7 +10,7 @@ import Button from "../Button";
 
 interface ListingCardProps {
   data: SafeListing;
-  purchase?: Purchase;
+  purchase?: SafePurchase;
   onAction?: (id: string) => void;
   disabled?: boolean;
   actionLabel?: string;

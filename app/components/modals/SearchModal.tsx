@@ -19,7 +19,7 @@ const SearchModal = () => {
   const searchModal = useSearchModal();
   const params = useSearchParams();
 
-  const [condition, setCondition] = useState<ConditionSelectValue>()
+  const [commodityCondition, setCommodityCondition] = useState<ConditionSelectValue>();
 
   const [step, setStep] = useState(STEPS.CONDITION);
 
@@ -41,7 +41,7 @@ const SearchModal = () => {
     }
     const updatedQuery: any = {
       ...currentQuery,
-      conditionValue: condition?.value,
+      commodityConditionValue: commodityCondition?.value,
     };
     const url = qs.stringifyUrl({
       url: '/',
@@ -52,7 +52,7 @@ const SearchModal = () => {
     searchModal.onClose();
     router.push(url);
 
-  }, [searchModal, condition, router, params])
+  }, [searchModal, commodityCondition, router, params])
 
   // const actionLabel = useMemo(() => {
   //   if (step === STEPS.INFO) {
@@ -74,9 +74,9 @@ const SearchModal = () => {
         title="どの状態の商品をお探しですか?"
       />
       <ConditionSelect
-        value={condition}
+        value={commodityCondition}
         onChange={(value) =>
-          setCondition(value as ConditionSelectValue)}
+          setCommodityCondition(value as ConditionSelectValue)}
       />
     </div>
   )

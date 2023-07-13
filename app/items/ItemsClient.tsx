@@ -23,22 +23,6 @@ const ItemsClient: React.FC<ItemsClientProps> = ({
   const router = useRouter();
   const [deletingId, setDeletingId] = useState('');
 
-  // const onCancel = useCallback((id: string) => {
-  //   setDeletingId(id);
-
-  //   axios.delete(`/api/reservations/${id}`)
-  //     .then(() => {
-  //       toast.success('Reservation cancelled');
-  //       router.refresh();
-  //     })
-  //     .catch((error) => {
-  //       toast.error(error?.response?.data?.error)
-  //     })
-  //     .finally(() => {
-  //       setDeletingId('');
-  //     })
-  // }, [router]);
-
   return (
     <Container>
       <div className="pt-4">

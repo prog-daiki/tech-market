@@ -36,7 +36,7 @@ export async function POST(
       imageSrc,
       category,
       brand,
-      commodityCondition: commodityCondition.value,
+      commodityConditionValue: commodityCondition.value,
       price: parseInt(price, 10),
       userId: currentUser.id
     }

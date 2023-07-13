@@ -68,8 +68,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
     ]);
 
 
-
-
   return (
     <Container>
       <div className="max-w-screen-lg mx-auto">
@@ -77,7 +75,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
           <ListingHead
             title={listing.title}
             imageSrc={listing.imageSrc}
-            commodityCondition={listing.commodityCondition}
+            commodityConditionValue={listing.commodityConditionValue}
             id={listing.id}
             currentUser={currentUser}
           />
@@ -87,7 +85,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
               category={category}
               brand={listing.brand}
               description={listing.description}
-              commodityCondition={listing.commodityCondition}
+              commodityConditionValue={listing.commodityConditionValue}
             />
             <div className="order-first mb-10 md:order-last md:col-span-3">
               <ListingPurchase

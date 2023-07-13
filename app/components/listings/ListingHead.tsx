@@ -7,7 +7,7 @@ import HeartButton from "../HeartButton";
 
 interface ListingHeadProps {
   title: string;
-  commodityCondition: string;
+  commodityConditionValue: string;
   imageSrc: string;
   id: string;
   currentUser?: SafeUser | null
@@ -15,7 +15,7 @@ interface ListingHeadProps {
 
 const ListingHead: React.FC<ListingHeadProps> = ({
   title,
-  commodityCondition,
+  commodityConditionValue,
   imageSrc,
   id,
   currentUser
@@ -23,13 +23,13 @@ const ListingHead: React.FC<ListingHeadProps> = ({
 
   const { getByValue } = useConditions();
 
-  const condition = getByValue(commodityCondition);
+  const commodityCondition = getByValue(commodityConditionValue);
 
   return (
     <>
       <Heading
         title={title}
-        subtitle={`${condition?.label}`}
+        subtitle={`${commodityCondition?.label}`}
       />
       <div className="w-full h-[60vh] overflow-hidden rounded-xl relative">
         <Image

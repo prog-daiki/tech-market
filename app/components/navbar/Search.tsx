@@ -11,14 +11,14 @@ const Search = () => {
   const params = useSearchParams();
   const { getByValue } = useConditions();
 
-  const conditionValue = params?.get('conditionValue');
+  const commodityConditionValue = params?.get('commodityConditionValue');
 
-  const conditionLabel = useMemo(() => {
-    if (conditionValue) {
-      return getByValue(conditionValue as string)?.label;
+  const commodityConditionLabel = useMemo(() => {
+    if (commodityConditionValue) {
+      return getByValue(commodityConditionValue as string)?.label;
     }
     return '商品の状態';
-  }, [conditionValue, getByValue]);
+  }, [commodityConditionValue, getByValue]);
 
   return (
     <div onClick={searchModal.onOpen}
@@ -29,7 +29,7 @@ const Search = () => {
           カテゴリー
         </div> */}
         <div className="hidden sm:block text-sm font-semibold px-6 border-x-[1px] flex-1 text-center">
-          {conditionLabel}
+          {commodityConditionLabel}
         </div>
         <div className="text-sm pl-6 pr-2 text-gray-600 flex flex-row items-center gap-3">
           <div className="hidden sm:block">なにをお探しですか？</div>

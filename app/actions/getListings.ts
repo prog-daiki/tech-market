@@ -2,8 +2,8 @@ import prisma from "@/app/libs/prismadb";
 
 export interface IListingsParams {
   userId?: string;
-  conditionValue?: string;
-  // commodityConditionValue?: string;
+  // conditionValue?: string;
+  commodityConditionValue?: string;
   // brand?: string;
   category?: string;
 }
@@ -12,7 +12,7 @@ export default async function getListings(
   params: IListingsParams
 ) {
   try {
-    const { userId, conditionValue, category } = params;
+    const { userId, commodityConditionValue, category } = params;
 
     let query: any = {};
 
@@ -24,8 +24,8 @@ export default async function getListings(
       query.category = category;
     }
 
-    if (conditionValue) {
-      query.commodityCondition = conditionValue;
+    if (commodityConditionValue) {
+      query.commodityConditionValue = commodityConditionValue;
     }
 
     const listings = await prisma.listing.findMany({
