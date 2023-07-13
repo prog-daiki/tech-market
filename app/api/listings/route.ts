@@ -20,7 +20,7 @@ export async function POST(
     category,
     price,
     brand,
-    commodityCondition
+    commodityCondition,
   } = body;
 
 
@@ -31,7 +31,7 @@ export async function POST(
       imageSrc,
       category,
       brand,
-      commodityCondition: commodityCondition.value,
+      commodityCondition,
       price: parseInt(price, 10),
       userId: currentUser.id
     }
