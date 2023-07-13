@@ -23,6 +23,11 @@ export async function POST(
     commodityCondition,
   } = body;
 
+  Object.keys(body).forEach((value: any) => {
+    if (!body[value]) {
+      NextResponse.error();
+    }
+  });
 
   const listing = await prisma.listing.create({
     data: {
@@ -31,7 +36,7 @@ export async function POST(
       imageSrc,
       category,
       brand,
-      commodityCondition: commodityCondition,
+      commodityCondition: commodityCondition.value,
       price: parseInt(price, 10),
       userId: currentUser.id
     }
