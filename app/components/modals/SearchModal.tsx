@@ -52,7 +52,7 @@ const SearchModal = () => {
     searchModal.onClose();
     router.push(url);
 
-  }, [step, searchModal, condition, router, params])
+  }, [searchModal, condition, router, params])
 
   // const actionLabel = useMemo(() => {
   //   if (step === STEPS.INFO) {
