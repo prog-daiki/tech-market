@@ -30,7 +30,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
   const router = useRouter();
   const { getByValue } = useConditions();
 
-  const commodityCondition = getByValue(data.commodityCondition)
+  const commodityCondition = getByValue(data.commodityConditionValue)
 
   const handleCancel = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
